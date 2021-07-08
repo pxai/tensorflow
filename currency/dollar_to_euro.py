@@ -2,8 +2,8 @@ import tensorflow
 import numpy
 import matplotlib.pyplot as plot
 
-celsius = numpy.array([-40, -10, 0, 8, 15, 22, 38], dtype = float)
-farenheit = numpy.array([-40, 14, 32, 46, 59, 72, 100], dtype = float)
+dollar = numpy.array([0, 2, 10, 15, 500], dtype = float)
+euro = numpy.array([0, 1.68, 8.42, 12.64, 421.17], dtype = float)
 
 layer = tensorflow.keras.layers.Dense(units = 1, input_shape = [1])
 model = tensorflow.keras.Sequential([layer])
@@ -14,7 +14,7 @@ model.compile(
 )
 
 print("Start learning...")
-history = model.fit(celsius, farenheit, epochs = 1000, verbose = False)
+history = model.fit(dollar, euro, epochs = 1000, verbose = False)
 print("Learning completed!!")
 
 result = model.predict([100.0])
